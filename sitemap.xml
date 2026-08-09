@@ -1,12 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://pikakasinopas.fi/</loc>
-    <xhtml:link rel="alternate" hreflang="fi-FI" href="https://pikakasinopas.fi/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://pikakasinopas.fi/"/>
+    <loc>https://pikakasinopas.fi/fi/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://pikakasinopas.fi/fi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pikakasinopas.fi/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pikakasinopas.fi/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pikakasinopas.fi/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pikakasinopas.fi/de/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://pikakasinopas.fi/nl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://pikakasinopas.fi/gr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pikakasinopas.fi/fi/"/>
     <lastmod>2026-08-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://pikakasinopas.fi/en/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://pikakasinopas.fi/fi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pikakasinopas.fi/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pikakasinopas.fi/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pikakasinopas.fi/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pikakasinopas.fi/de/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://pikakasinopas.fi/nl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://pikakasinopas.fi/gr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pikakasinopas.fi/fi/"/>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://pikakasinopas.fi/es/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://pikakasinopas.fi/fi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pikakasinopas.fi/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pikakasinopas.fi/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pikakasinopas.fi/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pikakasinopas.fi/de/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://pikakasinopas.fi/nl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://pikakasinopas.fi/gr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pikakasinopas.fi/fi/"/>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://pikakasinopas.fi/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://pikakasinopas.fi/fi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pikakasinopas.fi/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pikakasinopas.fi/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pikakasinopas.fi/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pikakasinopas.fi/de/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://pikakasinopas.fi/nl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://pikakasinopas.fi/gr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pikakasinopas.fi/fi/"/>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://pikakasinopas.fi/de/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://pikakasinopas.fi/fi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pikakasinopas.fi/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pikakasinopas.fi/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pikakasinopas.fi/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pikakasinopas.fi/de/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://pikakasinopas.fi/nl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://pikakasinopas.fi/gr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pikakasinopas.fi/fi/"/>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://pikakasinopas.fi/nl/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://pikakasinopas.fi/fi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pikakasinopas.fi/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pikakasinopas.fi/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pikakasinopas.fi/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pikakasinopas.fi/de/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://pikakasinopas.fi/nl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://pikakasinopas.fi/gr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pikakasinopas.fi/fi/"/>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://pikakasinopas.fi/gr/</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://pikakasinopas.fi/fi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pikakasinopas.fi/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pikakasinopas.fi/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pikakasinopas.fi/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pikakasinopas.fi/de/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://pikakasinopas.fi/nl/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://pikakasinopas.fi/gr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pikakasinopas.fi/fi/"/>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
 </urlset>
