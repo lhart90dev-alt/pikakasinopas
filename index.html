@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<!--
+  PIKAKASINO LANDING — pikakasinopas.fi
+  Target: "pikakasino" / "parhaat pikakasinot" / "ilman rekisteröitymistä" (FI Pay-N-Play).
+  All money/play clicks route through __go() → /go (302 to the destination brand — set in vercel.json).
+  Only <a href> on the page = external responsible-gambling links.
+  TODO before launch: set the real /go destination in vercel.json + _redirects.
+-->
+<html lang="fi" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#0b1524">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Pikakasino 2026 – parhaat kasinot ilman rekisteröitymistä</title>
+  <meta name="description" content="Parhaat pikakasinot ilman rekisteröitymistä 2026. Pelaa verkkopankkitunnuksilla ilman tiliä, lunasta bonukset ja nauti nopeista kotiutuksista minuuteissa. Verovapaa EU-kasino.">
+  <meta name="keywords" content="pikakasino, pikakasinot, kasino ilman rekisteröitymistä, nettikasino ilman tiliä, pay n play, trustly kasino, nopeat kotiutukset, parhaat pikakasinot 2026, verovapaa kasino">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="rating" content="adult">
+  <meta name="geo.region" content="FI">
+  <meta name="geo.placename" content="Suomi">
+
+  <link rel="canonical" href="https://pikakasinopas.fi/">
+  <link rel="alternate" hreflang="fi-FI" href="https://pikakasinopas.fi/">
+  <link rel="alternate" hreflang="fi" href="https://pikakasinopas.fi/">
+  <link rel="alternate" hreflang="x-default" href="https://pikakasinopas.fi/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fi_FI">
+  <meta property="og:site_name" content="Pikakasino">
+  <meta property="og:url" content="https://pikakasinopas.fi/">
+  <meta property="og:title" content="Pikakasino 2026 – parhaat kasinot ilman rekisteröitymistä">
+  <meta property="og:description" content="Pelaa verkkopankkitunnuksilla ilman rekisteröitymistä ja tiliä. Lunasta bonukset ja nauti nopeista kotiutuksista minuuteissa.">
+  <meta property="og:image" content="https://pikakasinopas.fi/assets/og-image.jpg">
+  <meta property="og:image:secure_url" content="https://pikakasinopas.fi/assets/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Pikakasino ilman rekisteröitymistä – nopeat kotiutukset">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pikakasino 2026 – parhaat kasinot ilman rekisteröitymistä">
+  <meta name="twitter:description" content="Pelaa verkkopankkitunnuksilla ilman rekisteröitymistä. Nopeat kotiutukset minuuteissa.">
+  <meta name="twitter:image" content="https://pikakasinopas.fi/assets/og-image.jpg">
+  <meta name="twitter:image:alt" content="Pikakasino ilman rekisteröitymistä – nopeat kotiutukset">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/icon-48.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preload" as="image" href="/assets/img/hero.webp" imagesrcset="/assets/img/hero-sm.webp 900w, /assets/img/hero.webp 1600w" imagesizes="(max-width:1180px) 100vw, 1180px" fetchpriority="high">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Pikakasino","url":"https://pikakasinopas.fi/","logo":"https://pikakasinopas.fi/assets/logo.png","description":"Suomenkielinen opas pikakasinoihin ilman rekisteröitymistä: Pay N Play, verkkopankkimaksut ja nopeat kotiutukset."}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Pikakasino","url":"https://pikakasinopas.fi/","inLanguage":"fi-FI"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Pikakasino 2026 – parhaat kasinot ilman rekisteröitymistä","url":"https://pikakasinopas.fi/","inLanguage":"fi-FI","description":"Vertaa parhaat pikakasinot ilman rekisteröitymistä ja tiliä. Pay N Play, verkkopankkimaksut ja nopeat kotiutukset.","isPartOf":{"@type":"WebSite","name":"Pikakasino","url":"https://pikakasinopas.fi/"},"about":{"@type":"Thing","name":"Pikakasino ilman rekisteröitymistä"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"fi-FI","mainEntity":[{"@type":"Question","name":"Mikä on pikakasino?","acceptedAnswer":{"@type":"Answer","text":"Pikakasino on nettikasino, jolla voit pelata ilman erillistä rekisteröitymistä. Kirjaudut ja teet talletuksen suoraan verkkopankkitunnuksilla (Pay N Play), joten pelitili syntyy automaattisesti ja voit aloittaa pelaamisen muutamassa minuutissa."}},{"@type":"Question","name":"Miten kasino ilman rekisteröitymistä toimii?","acceptedAnswer":{"@type":"Answer","text":"Tunnistautuminen ja maksut hoituvat verkkopankilla palveluntarjoajien kuten Trustlyn tai Zimplerin kautta. Koska pankki vahvistaa henkilöllisyytesi, erillistä lomakerekisteröintiä tai käyttäjätunnusta ei tarvita ja kotiutukset ovat yleensä nopeita."}},{"@type":"Question","name":"Kuinka nopeita kotiutukset pikakasinolla ovat?","acceptedAnswer":{"@type":"Answer","text":"Pay N Play -pikakasinoilla kotiutukset käsitellään usein minuuteissa ja raha näkyy tililläsi tyypillisesti alle 15 minuutissa, koska tunnistautuminen on tehty jo talletuksen yhteydessä."}},{"@type":"Question","name":"Saako pikakasinolta bonuksia?","acceptedAnswer":{"@type":"Answer","text":"Kyllä. Monet pikakasinot tarjoavat tervetuliaisbonuksen, ilmaiskierroksia tai käteispalautusta. Lue aina bonusehdot ja kierrätysvaatimukset ennen tarjouksen lunastamista."}},{"@type":"Question","name":"Onko pikakasinolla pelaaminen turvallista ja laillista Suomessa?","acceptedAnswer":{"@type":"Answer","text":"Suomessa ei ole vielä omaa pelilisenssiä, ja monopoli puretaan: lisensointi alkaa asteittain ja markkina avautuu vuonna 2027. Ulkomaisen lisenssin (esimerkiksi MGA) kasinolla pelaaminen on suomalaiselle sallittua. Valitse aina kasino, jolla on voimassa oleva lisenssi, SSL-suojaus ja vastuullisen pelaamisen työkalut."}},{"@type":"Question","name":"Voinko pelata pikakasinolla mobiililla?","acceptedAnswer":{"@type":"Answer","text":"Kyllä. Pikakasinot toimivat suoraan puhelimen tai tabletin selaimessa ilman sovelluksen lataamista, ja sekä pelit että kassa ovat käytettävissä myös liikkeellä."}}]}</script>
+
+  <style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --d-bg:#0b1524; --d-bg2:#122036; --d-line:rgba(255,255,255,.12);
+  --bg:#eef3fa; --bg-alt:#ffffff; --card:#ffffff; --ink:#0e1a2b; --muted:#54657a;
+  --line:#e2e9f3; --shadow:0 8px 24px rgba(14,26,43,.08); --shadow-h:0 14px 30px rgba(14,26,43,.16);
+  --brand:#146fbf; --brand-2:#38c6ff; --brand-d:#0b1524;
+  --gold:#e0930a; --cta:#0f7a3a; --cta-d:#0b5e2c; --cta-ink:#fff;
+  --radius:16px; --maxw:1180px;
+}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji",sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{line-height:1.18;margin:0 0 .5em;color:var(--ink)}
+h2{font-size:clamp(1.5rem,3.4vw,2.15rem)}h3{font-size:1.18rem}
+p{margin:0 0 1em}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(16px,4vw,28px)}
+.section{padding-block:clamp(38px,6vw,64px)}
+.sec-alt{background:var(--bg-alt)}
+.sec-dark{background:linear-gradient(180deg,#0d1a2e,#0b1524);color:#dbe6f5}
+.sec-dark h2{color:#fff}.sec-dark .section-head p{color:#9db3cf}
+.section-head{max-width:760px;margin:0 auto clamp(20px,3vw,30px);text-align:center}
+.section-head p{color:var(--muted);margin:0}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);margin-bottom:.5rem}
+.sec-dark .eyebrow{color:var(--brand-2)}
+:focus-visible{outline:3px solid var(--brand-2);outline-offset:2px;border-radius:8px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--gold);color:#0b1524;padding:10px 16px;border-radius:10px;font-weight:800;z-index:200;transition:top .2s}
+.skip:focus{top:12px}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+button{font:inherit}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font-weight:800;border-radius:999px;
+  padding:.85em 1.6em;min-height:48px;cursor:pointer;border:0;font-size:1rem;text-align:center;
+  transition:transform .12s,box-shadow .12s,background-color .12s}
+.btn-cta{background:linear-gradient(180deg,var(--cta),var(--cta-d));color:var(--cta-ink);box-shadow:0 8px 20px rgba(22,163,74,.3)}
+.btn-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(22,163,74,.4)}
+.btn-ghost{background:#fff;color:var(--brand-d);border:1px solid var(--line)}
+.btn-ghost:hover{background:#f5f9ff;border-color:var(--brand-2)}
+.btn-lg{font-size:1.1rem;padding:1em 2em;min-height:56px}
+
+.hdr{position:sticky;top:0;z-index:100;background:linear-gradient(180deg,#12213a,#0b1524);border-bottom:1px solid rgba(255,255,255,.10)}
+.hdr-in{display:flex;align-items:center;gap:14px;height:64px}
+.logo{display:flex;align-items:center;gap:8px;flex:0 0 auto;background:none;border:0;cursor:pointer;padding:4px}
+.logo img{width:150px;height:auto}
+.hdr-search{flex:1 1 auto;max-width:440px;position:relative;display:flex;align-items:center;height:44px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.26);color:#b9c7dc;padding:0 16px 0 42px;cursor:text;font-size:1rem;text-align:left}
+.hdr-search .si{position:absolute;left:14px;color:#b9c7dc;display:flex}
+.hdr-actions{display:flex;align-items:center;gap:10px;flex:0 0 auto;margin-left:auto}
+.hdr-actions .btn{padding:.6em 1.15em;min-height:42px}
+.iconbtn{width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.menu-toggle{display:none}
+
+.drawer{position:fixed;inset:0 auto 0 0;width:300px;max-width:86vw;background:var(--d-bg2);color:#eee;z-index:150;transform:translateX(-105%);transition:transform .25s;padding:20px;overflow-y:auto}
+.drawer[aria-hidden="false"]{transform:translateX(0)}
+.drawer h2{font-size:.78rem;color:#93a6c4;text-transform:uppercase;letter-spacing:.1em;margin:18px 0 8px}
+.drawer button.dl{display:block;width:100%;text-align:left;padding:12px 10px;border-radius:10px;color:#eee;font-weight:600;background:none;border:0;cursor:pointer}
+.drawer button.dl:hover{background:rgba(255,255,255,.07)}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:140;opacity:0;visibility:hidden;transition:opacity .25s}
+.scrim[data-show="1"]{opacity:1;visibility:visible}
+
+.banner-zone{background:var(--bg-alt);padding:clamp(18px,3vw,30px) 0}
+.banner{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(11,21,36,.18);aspect-ratio:1920/768;background:#0b1524}
+.banner-main{position:absolute;inset:0;width:100%;height:100%;border:0;background:none;padding:0;margin:0;cursor:pointer;display:block;text-align:left;color:inherit;transition:transform .2s}
+.banner:hover .banner-main{transform:scale(1.015)}
+.banner-img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.banner-cta{position:absolute;left:clamp(18px,5%,60px);bottom:clamp(16px,7%,44px);z-index:2;display:inline-flex;align-items:center;gap:.5em;background:var(--cta);color:#fff;font-weight:800;border-radius:999px;padding:.7em 1.6em;font-size:clamp(.95rem,1.6vw,1.1rem);box-shadow:0 8px 20px rgba(0,0,0,.3);pointer-events:none}
+.banner-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--brand-d);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.25);transition:background-color .12s,transform .12s}
+.banner-arrow:hover{background:#fff;transform:translateY(-50%) scale(1.08)}
+.ba-left{left:12px}.ba-right{right:12px}
+@media(max-width:720px){.banner-arrow{display:none}.banner-cta{left:50%;transform:translateX(-50%);bottom:12px}}
+
+.intro{text-align:center}
+.intro h1{font-size:clamp(1.7rem,4.4vw,2.7rem);max-width:20ch;margin-inline:auto;letter-spacing:-.01em}
+.intro h1 .hl{color:var(--brand)}
+.intro .lead{color:var(--muted);max-width:62ch;margin:0 auto 1.4em;font-size:1.08rem}
+.intro .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.trust{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:1.6em;color:var(--muted);font-size:.9rem}
+.trust span{display:inline-flex;align-items:center;gap:7px}
+.trust .ti{color:var(--brand)}
+.tag18{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:22px;padding:0 6px;border-radius:6px;background:#be123c;color:#fff;font-weight:800;font-size:.72rem}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,3vw,28px);box-shadow:var(--shadow);text-align:center}
+.step .num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;font-size:.95rem;margin-bottom:12px}
+.step img{width:56px;height:56px;margin:0 auto 12px}
+.step h3{margin:0 0 .35em}
+.step p{margin:0;color:var(--muted);font-size:.96rem}
+
+.cats{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 14px;scrollbar-width:thin;justify-content:flex-start}
+.catbtn{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;padding:11px 18px;border-radius:999px;
+  border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer;font-weight:700;font-size:.92rem;transition:transform .12s,border-color .12s,color .12s,background-color .12s}
+.catbtn:hover{transform:translateY(-1px);border-color:var(--brand-2)}
+.catbtn.is-active{background:linear-gradient(180deg,var(--brand),#0f66ad);color:#fff;border-color:var(--brand)}
+@media(min-width:900px){.cats{justify-content:center}}
+
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.tile{position:relative;display:block;border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--line);cursor:pointer;padding:0;text-align:left;transition:transform .14s,box-shadow .14s}
+.tile:hover{transform:translateY(-4px);box-shadow:var(--shadow-h)}
+.tile-media{position:relative;display:block;aspect-ratio:3/4;background:#dde7f3}
+.tile-media img{width:100%;height:100%;object-fit:cover}
+.tile-play{position:absolute;inset:0;margin:auto;width:52px;height:52px;border-radius:50%;background:var(--cta);color:#fff;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.8);transition:opacity .15s,transform .15s;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.tile:hover .tile-play,.tile:focus-visible .tile-play{opacity:1;transform:scale(1)}
+.badge{position:absolute;top:8px;left:8px;font-size:.66rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;padding:3px 8px;border-radius:6px;color:#fff}
+.b-new{background:#0f7a3a}.b-hot{background:#a83308}
+.tile.hide{display:none}
+.grid-more{text-align:center;margin-top:28px}
+
+.pgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.pcard{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.05);border:1px solid var(--d-line);border-radius:14px;padding:20px 14px;cursor:pointer;min-height:88px;transition:transform .14s,background-color .14s}
+.pcard:hover{transform:translateY(-3px);background:rgba(255,255,255,.1)}
+.pcard img{width:100%;max-width:120px;height:38px;object-fit:contain;filter:brightness(0) invert(1);opacity:.9}
+@media(max-width:900px){.pgrid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:560px){.pgrid{grid-template-columns:repeat(3,1fr)}}
+
+.pay-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center}
+.pay-trustly{background:linear-gradient(160deg,#122036,#0b1524);border-radius:var(--radius);padding:clamp(22px,3vw,32px);color:#dbe6f5;text-align:center;box-shadow:var(--shadow)}
+.pay-trustly img{height:34px;width:auto;margin:0 auto 14px;filter:brightness(0) invert(1)}
+.pay-trustly p{margin:0;color:#9db3cf;font-size:.96rem}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-weight:700;font-size:.92rem;color:var(--ink);box-shadow:var(--shadow)}
+@media(max-width:760px){.pay-wrap{grid-template-columns:1fr}}
+
+.prose{max-width:820px;margin-inline:auto}
+.prose h2{margin-top:0}
+.prose h3{color:var(--brand-d);margin-top:1.4em}
+.prose p,.prose li{color:var(--muted)}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,3vw,30px);box-shadow:var(--shadow)}
+.tbl{width:100%;border-collapse:collapse;margin:0 0 1em;font-size:.95rem}
+.tbl th,.tbl td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line)}
+.tbl th{color:var(--ink);width:52%}.tbl td{color:var(--muted)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pc-list{list-style:none;padding:0;margin:0}
+.pc-list li{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;color:var(--muted)}
+.pc-list svg{flex:0 0 auto;margin-top:3px}
+.ic-yes{color:#16a34a}.ic-no{color:#dc2626}
+.verdict{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.score{flex:0 0 auto;width:104px;height:104px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:conic-gradient(var(--gold) 0 84%,#e6ebf3 84% 100%)}
+.score-inner{width:82px;height:82px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.score-inner b{color:#b45309;font-size:1.7rem;line-height:1}.score-inner span{color:var(--muted);font-size:.72rem}
+.badges{display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:18px;padding:18px;background:#0b1524;border-radius:var(--radius)}
+.badges img{height:54px;width:auto;object-fit:contain}
+
+.faq{max-width:820px;margin-inline:auto}
+.faq-item{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;background:#fff;overflow:hidden;box-shadow:var(--shadow)}
+.faq-q{margin:0;font-size:1.05rem}
+.faq-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;background:none;border:0;color:var(--ink);font-weight:700;text-align:left;padding:18px 20px;cursor:pointer;min-height:56px}
+.faq-btn .chev{transition:transform .2s;flex:0 0 auto;color:var(--brand)}
+.faq-btn[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.faq-a{padding:0 20px 18px}.faq-a p{margin:0;color:var(--muted)}
+
+.ftr{background:#081120;color:#c2cee0;border-top:1px solid var(--d-line);padding-block:44px 30px}
+.ftr-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px;margin-bottom:28px}
+.ftr h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:#8ea3c2;margin-bottom:14px}
+.ftr .logo img{width:150px}
+.ftr .fchips{display:flex;flex-wrap:wrap;gap:8px}
+.ftr .fchip{background:rgba(255,255,255,.06);border:1px solid var(--d-line);border-radius:999px;padding:6px 12px;font-size:.82rem;color:#c2cee0;cursor:pointer}
+.ftr .fchip:hover{background:rgba(255,255,255,.12)}
+.ftr button.fl{display:block;color:#c2cee0;padding:5px 0;background:none;border:0;cursor:pointer;font:inherit;text-align:left}
+.ftr button.fl:hover{color:#fff}
+.ftr a.fl{display:block;color:#c2cee0;padding:5px 0;text-decoration:none}
+.ftr a.fl:hover{color:#fff;text-decoration:underline}
+.rg{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:6px 0 16px}
+.rg span:not(.tag18){font-weight:700;color:#c2cee0}
+.disclaimer{color:#8296b4;font-size:.85rem;border-top:1px solid var(--d-line);padding-top:20px}
+
+.cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:160;max-width:720px;margin-inline:auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:0 12px 34px rgba(0,0,0,.2);display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.cookie p{margin:0;flex:1 1 260px;color:var(--muted);font-size:.9rem}
+.cookie .btn{padding:.55em 1.2em;min-height:42px}
+.cookie[hidden]{display:none}
+.totop{position:fixed;right:18px;bottom:18px;z-index:120;width:48px;height:48px;border-radius:50%;background:var(--brand);color:#fff;border:0;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow-h);opacity:0;visibility:hidden;transition:opacity .2s}
+.totop[data-show="1"]{opacity:1;visibility:visible}
+
+@media(max-width:1100px){.grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:900px){.steps{grid-template-columns:1fr}.grid-2,.ftr-grid{grid-template-columns:1fr}.hdr-search{display:none}.menu-toggle{display:flex}}
+@media(max-width:760px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.hdr-actions .btn-ghost,.intro .cta-row .btn-ghost{display:none}}
+@media(max-width:520px){
+  .hdr-in{gap:8px}.logo img{width:120px}
+  .hdr-actions .btn{padding:.55em .9em;font-size:.92rem}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .cookie{flex-direction:column;align-items:stretch;gap:10px}.cookie p{flex:0 0 auto}.cookie .btn{width:100%}
+}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+  </style>
+  <script>function __go(e){if(e&&e.preventDefault){e.preventDefault();}window.location.href='/go';return false;}</script>
+</head>
+
+<body id="top">
+  <button class="skip" type="button" onclick="__scroll('main')">Siirry sisältöön</button>
+
+  <header class="hdr">
+    <div class="wrap hdr-in">
+      <button type="button" id="menuToggle" class="iconbtn menu-toggle" aria-label="Avaa valikko" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      <button type="button" class="logo" onclick="__go()" aria-label="Pikakasino — etusivu">
+        <img src="/assets/logo-white.png" width="150" height="51" alt="Pikakasino">
+      </button>
+      <button type="button" class="hdr-search" onclick="__go()" onfocus="__go()">
+        <span class="si"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><span>Etsi pelejä, kolikkopelejä, ruletti…</span>
+      </button>
+      <div class="hdr-actions">
+        <button type="button" class="btn btn-ghost" onclick="__go()">Kirjaudu</button>
+        <button type="button" class="btn btn-cta" onclick="__go()">Rekisteröidy</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="scrim" id="scrim" data-show="0"></div>
+  <nav class="drawer" id="drawer" aria-hidden="true" aria-label="Valikko">
+    <button type="button" id="drawerClose" class="iconbtn" aria-label="Sulje valikko"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h2>Pikakasino</h2>
+    <button type="button" class="dl" onclick="__scroll('paynplay')">Ilman rekisteröitymistä</button>
+    <button type="button" class="dl" onclick="__scroll('games')">Pelit</button>
+    <button type="button" class="dl" onclick="__scroll('bonus')">Bonukset &amp; tarjoukset</button>
+    <button type="button" class="dl" onclick="__scroll('providers')">Pelinvalmistajat</button>
+    <button type="button" class="dl" onclick="__scroll('payments')">Maksutavat</button>
+    <button type="button" class="dl" onclick="__scroll('license')">Lisenssi &amp; turvallisuus</button>
+    <button type="button" class="dl" onclick="__scroll('faq')">UKK</button>
+    <h2>Tili</h2>
+    <button type="button" class="dl" onclick="__go()">Rekisteröidy</button>
+    <button type="button" class="dl" onclick="__go()">Kirjaudu</button>
+  </nav>
+
+  <div class="banner-zone">
+    <div class="wrap">
+      <div class="banner">
+        <button type="button" class="banner-main" onclick="__go()" aria-label="Pikabonukset — pelaa nyt">
+          <img class="banner-img" src="/assets/img/hero.webp" srcset="/assets/img/hero-sm.webp 900w, /assets/img/hero.webp 1600w" sizes="(max-width:1180px) 100vw, 1180px" width="1600" height="640" fetchpriority="high" alt="Pikabonukset ja verovapaa EU-kasino — pelaa ilman rekisteröitymistä">
+          <span class="banner-cta">Pelaa nyt</span>
+        </button>
+        <button type="button" class="banner-arrow ba-left" onclick="__go()" aria-label="Edellinen tarjous"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button type="button" class="banner-arrow ba-right" onclick="__go()" aria-label="Seuraava tarjous"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <section class="section intro" aria-labelledby="intro-h">
+      <div class="wrap">
+        <span class="eyebrow">Pikakasino</span>
+        <h1 id="intro-h">Parhaat <span class="hl">pikakasinot</span> ilman rekisteröitymistä 2026</h1>
+        <p class="lead">Pelaa pikakasinolla ilman rekisteröitymistä ja tiliä: teet talletuksen ja tunnistaudut suoraan verkkopankilla, lunastat bonukset ja nautit nopeista kotiutuksista minuuteissa.</p>
+        <div class="cta-row">
+          <button type="button" class="btn btn-cta btn-lg" onclick="__go()">Pelaa nyt</button>
+          <button type="button" class="btn btn-ghost btn-lg" onclick="__scroll('paynplay')">Näin se toimii</button>
+        </div>
+        <p class="trust">
+          <span><span class="tag18">18+</span> Pelaa vastuullisesti</span>
+          <span><span class="ti"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span> Verovapaa EU-kasino</span>
+          <span><span class="ti"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"/></svg></span> Nopeat kotiutukset</span>
+          <span><span class="ti"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span> Trustly-tunnistus</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="section sec-alt" id="paynplay" aria-labelledby="pnp-h">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Pay N Play</span>
+          <h2 id="pnp-h">Pelaa ilman rekisteröitymistä – näin se toimii</h2>
+          <p>Pikakasinolla ei täytetä lomakkeita. Tunnistaudut ja maksat verkkopankilla, ja pelitili syntyy automaattisesti.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span class="num">1</span>
+            <img src="/assets/img/ic/pay.svg" width="56" height="56" loading="lazy" decoding="async" alt="">
+            <h3>Talleta verkkopankilla</h3>
+            <p>Valitse Trustly tai Zimpler ja vahvista talletus omilla verkkopankkitunnuksillasi. Ei rekisteröitymistä, ei käyttäjätunnusta.</p>
+          </div>
+          <div class="step">
+            <span class="num">2</span>
+            <img src="/assets/img/ic/support.svg" width="56" height="56" loading="lazy" decoding="async" alt="">
+            <h3>Pelaa heti ilman tiliä</h3>
+            <p>Pelitili luodaan automaattisesti pankin tiedoilla. Pääset pelaamaan kolikkopelejä ja live-kasinoa muutamassa minuutissa.</p>
+          </div>
+          <div class="step">
+            <span class="num">3</span>
+            <img src="/assets/img/ic/tax.svg" width="56" height="56" loading="lazy" decoding="async" alt="">
+            <h3>Kotiuta minuuteissa</h3>
+            <p>Koska tunnistautuminen on jo tehty, kotiutukset ovat nopeita – usein alle 15 minuuttia. EU-kasinolla voitot ovat verovapaita.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="games" aria-labelledby="games-h">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Pelit</span>
+          <h2 id="games-h">Suositut pelit pikakasinolla</h2>
+          <p>Tuhansia kolikkopelejä, live-kasino ja pöytäpelit huippuvalmistajilta.</p>
+        </div>
+        <div class="cats" role="group" aria-label="Pelien luokat">
+          <button type="button" class="catbtn is-active" data-filter="feat" aria-pressed="true">Suositut</button>
+          <button type="button" class="catbtn" data-filter="new" aria-pressed="false">Uutuudet</button>
+          <button type="button" class="catbtn" data-filter="all" aria-pressed="false">Kaikki kolikkopelit</button>
+        </div>
+        <div class="grid" id="gameGrid"></div>
+        <div class="grid-more"><button type="button" class="btn btn-cta" onclick="__go()">Katso kaikki pelit</button></div>
+      </div>
+    </section>
+
+    <section class="section sec-dark" id="providers" aria-labelledby="prov-h">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Pelinvalmistajat</span>
+          <h2 id="prov-h">Pelit huippuvalmistajilta</h2>
+          <p>Kolikkopelit ja live-pelit alan johtavilta studioilta.</p>
+        </div>
+        <div class="pgrid">
+          <button type="button" class="pcard" onclick="__go()" aria-label="Pragmatic Play"><img src="/assets/img/prov/pragmatic.webp" width="120" height="38" loading="lazy" decoding="async" alt="Pragmatic Play"></button>
+          <button type="button" class="pcard" onclick="__go()" aria-label="Evolution"><img src="/assets/img/prov/evolution.webp" width="120" height="38" loading="lazy" decoding="async" alt="Evolution"></button>
+          <button type="button" class="pcard" onclick="__go()" aria-label="NetEnt"><img src="/assets/img/prov/netent.webp" width="120" height="38" loading="lazy" decoding="async" alt="NetEnt"></button>
+          <button type="button" class="pcard" onclick="__go()" aria-label="Play'n GO"><img src="/assets/img/prov/playngo.webp" width="120" height="38" loading="lazy" decoding="async" alt="Play'n GO"></button>
+          <button type="button" class="pcard" onclick="__go()" aria-label="Hacksaw Gaming"><img src="/assets/img/prov/hacksaw.webp" width="120" height="38" loading="lazy" decoding="async" alt="Hacksaw Gaming"></button>
+          <button type="button" class="pcard" onclick="__go()" aria-label="Nolimit City"><img src="/assets/img/prov/nolimit.webp" width="120" height="38" loading="lazy" decoding="async" alt="Nolimit City"></button>
+          <button type="button" class="pcard" onclick="__go()" aria-label="Push Gaming"><img src="/assets/img/prov/pushgaming.webp" width="120" height="38" loading="lazy" decoding="async" alt="Push Gaming"></button>
+          <button type="button" class="pcard" onclick="__go()" aria-label="Yggdrasil"><img src="/assets/img/prov/yggdrasil.webp" width="120" height="38" loading="lazy" decoding="async" alt="Yggdrasil"></button>
+          <button type="button" class="pcard" onclick="__go()" aria-label="Red Tiger"><img src="/assets/img/prov/redtiger.webp" width="120" height="38" loading="lazy" decoding="async" alt="Red Tiger"></button>
+          <button type="button" class="pcard" onclick="__go()" aria-label="Quickspin"><img src="/assets/img/prov/quickspin.webp" width="120" height="38" loading="lazy" decoding="async" alt="Quickspin"></button>
+          <button type="button" class="pcard" onclick="__go()" aria-label="Relax Gaming"><img src="/assets/img/prov/relax.webp" width="120" height="38" loading="lazy" decoding="async" alt="Relax Gaming"></button>
+          <button type="button" class="pcard" onclick="__go()" aria-label="Wazdan"><img src="/assets/img/prov/wazdan.svg" width="120" height="38" loading="lazy" decoding="async" alt="Wazdan"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sec-alt" id="overview" aria-labelledby="ov-h">
+      <div class="wrap prose">
+        <span class="eyebrow">Yleiskatsaus</span>
+        <h2 id="ov-h">Pikakasino lyhyesti</h2>
+        <p><strong>Pikakasino</strong> on <strong>nettikasino ilman rekisteröitymistä</strong>: pelaat suoraan verkkopankkitunnuksilla, joten erillistä tilin luontia ei tarvita. Malli tunnetaan nimellä <strong>Pay N Play</strong>, ja se on noussut Suomessa suositummaksi kuin perinteinen rekisteröitymistä vaativa kasino.</p>
+        <p>Parhaat pikakasinot tarjoavat tuhansia <strong>kolikkopelejä</strong>, <strong>live-kasinon</strong> oikeilla jakajilla sekä <strong>ruletin</strong> ja pöytäpelit – kaikki eurolla ja verovapaasti EU-lisenssillä. Alta löydät bonukset, maksutavat ja turvallisuuden, jotta voit valita luotettavan pikakasinon.</p>
+      </div>
+    </section>
+
+    <section class="section" id="bonus" aria-labelledby="bn-h">
+      <div class="wrap prose">
+        <span class="eyebrow">Tarjoukset</span>
+        <h2 id="bn-h">Tervetuliaisbonus &amp; tarjoukset</h2>
+        <p>Uudet pelaajat aloittavat kasvatetulla pelikassalla: <strong>100 % jopa 500 €</strong> ensitalletuksesta ja <strong>200 ilmaiskierrosta</strong>. Tervetuliaistarjouksen lisäksi luvassa on viikoittaisia <strong>pikabonuksia</strong>, käteispalautusta ja turnauksia.</p>
+        <div class="card">
+          <table class="tbl">
+            <caption class="vh">Tervetuliaisbonuksen keskeiset ehdot</caption>
+            <tbody>
+              <tr><th scope="row">Ensitalletusbonus</th><td>100 % jopa 500 € + 200 ilmaiskierrosta</td></tr>
+              <tr><th scope="row">Vähimmäistalletus</th><td>alkaen 10 €</td></tr>
+              <tr><th scope="row">Kierrätysvaatimus</th><td>voimassa (katso täydelliset ehdot)</td></tr>
+              <tr><th scope="row">Voittojen verotus</th><td>verovapaa (ETA-alueen EU-lisenssi)</td></tr>
+              <tr><th scope="row">Saatavuus</th><td>vain uudet pelaajat, 18+</td></tr>
+            </tbody>
+          </table>
+          <p style="margin:0">Lue aina täydelliset ehdot ennen bonuksen lunastamista: summat, aikarajat ja kierrätysvaatimus ratkaisevat, milloin voit kotiuttaa.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sec-alt" id="collection" aria-labelledby="gm-h">
+      <div class="wrap prose">
+        <span class="eyebrow">Pelivalikoima</span>
+        <h2 id="gm-h">Pelit: kolikkopelit, live-kasino &amp; ruletti</h2>
+        <h3>Kolikkopelit</h3>
+        <p><strong>Kolikkopelit</strong> ovat jokaisen pikakasinon sydän. Tarjolla on sekä klassikoita että uutuuksia bonuskierroksilla, ilmaiskierroksilla ja jättipoteilla – korkealla RTP:llä valmistajilta kuten Pragmatic Play, Hacksaw ja Nolimit City.</p>
+        <h3>Live-kasino</h3>
+        <p><strong>Live-kasino</strong> tuo aidon pelisalin tunnelman ruudullesi: oikeat jakajat, HD-lähetys ja suositut peliohjelmat. Pelaa live-blackjackia, bakaraa ja show-pelejä reaaliajassa.</p>
+        <h3>Ruletti &amp; pöytäpelit</h3>
+        <p><strong>Ruletti</strong> on ajaton valinta – tarjolla eurooppalainen, Speed- ja videoversiot. Lisäksi pöytäpelit kuten blackjack ja baccarat tarjoavat strategista syvyyttä.</p>
+      </div>
+    </section>
+
+    <section class="section" id="payments" aria-labelledby="pay-h">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Kassa</span>
+          <h2 id="pay-h">Maksutavat &amp; nopeat kotiutukset</h2>
+          <p>Verkkopankki, Pay N Play ja e-lompakot – talletukset heti ja kotiutukset minuuteissa.</p>
+        </div>
+        <div class="pay-wrap">
+          <div class="pay-trustly">
+            <img src="/assets/img/trustly.svg" width="150" height="34" loading="lazy" decoding="async" alt="Trustly">
+            <p><strong style="color:#fff">Pay N Play verkkopankilla.</strong> Talleta ja tunnistaudu suomalaisella verkkopankilla ilman rekisteröitymistä – kotiutukset takaisin samalle tilille, usein alle 15 minuutissa.</p>
+          </div>
+          <div class="chips">
+            <span class="chip">Trustly</span>
+            <span class="chip">Verkkopankki</span>
+            <span class="chip">Zimpler</span>
+            <span class="chip">Brite</span>
+            <span class="chip">Visa</span>
+            <span class="chip">Mastercard</span>
+            <span class="chip">MuchBetter</span>
+            <span class="chip">Neteller</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sec-alt" id="license" aria-labelledby="lic-h">
+      <div class="wrap prose">
+        <span class="eyebrow">Turvallisuus</span>
+        <h2 id="lic-h">Turvallinen ja luotettava pikakasino: lisenssi &amp; turvallisuus</h2>
+        <p>Suomessa ei ole vielä omaa nettikasinolisenssiä. Veikkauksen yksinoikeus puretaan, ja <strong>lisenssijärjestelmä</strong> otetaan käyttöön vaiheittain – markkina avautuu vuonna 2027. Siihen asti suomalaiset pelaavat laillisesti <strong>ulkomaisen lisenssin</strong> kasinoilla, kuten <strong>Maltan (MGA)</strong> lisenssillä toimivilla pikakasinoilla.</p>
+        <p>Luotettava pikakasino käyttää SSL-salausta, sertifioitua satunnaislukugeneraattoria (RNG) reilun pelin takaamiseksi sekä tarjoaa talletus- ja aikarajat ja itsesulkumahdollisuuden. Tarkista aina lisenssin tila ennen talletusta. Rahapelaaminen on sallittu vain täysi-ikäisille <strong>18+</strong>.</p>
+        <div class="badges" role="img" aria-label="Lisenssi- ja sertifikaattimerkit: MGA ja eCOGRA">
+          <img src="/assets/img/badge/mga.webp" width="96" height="54" loading="lazy" decoding="async" alt="Malta Gaming Authority (MGA)">
+          <img src="/assets/img/badge/ecogra.webp" width="120" height="54" loading="lazy" decoding="async" alt="eCOGRA">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="verdict" aria-labelledby="pc-h">
+      <div class="wrap prose">
+        <span class="eyebrow">Arvio</span>
+        <h2 id="pc-h">Plussat &amp; miinukset</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3 style="margin-top:0;color:#16a34a">Plussat</h3>
+            <ul class="pc-list">
+              <li><span class="ic-yes"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>Pelaa ilman rekisteröitymistä ja tiliä</li>
+              <li><span class="ic-yes"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>Nopeat kotiutukset – usein alle 15 min</li>
+              <li><span class="ic-yes"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>Verovapaat voitot EU-lisenssillä</li>
+              <li><span class="ic-yes"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>Tuhansia kolikkopelejä &amp; live-kasino</li>
+              <li><span class="ic-yes"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span>Talletus verkkopankilla, Trustly &amp; Zimpler</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3 style="margin-top:0;color:#dc2626">Miinukset</h3>
+            <ul class="pc-list">
+              <li><span class="ic-no"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>Bonuksissa on kierrätysvaatimus</li>
+              <li><span class="ic-no"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>Vaatii suomalaiset verkkopankkitunnukset</li>
+              <li><span class="ic-no"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>Kotiutusaika vaihtelee maksutavan mukaan</li>
+            </ul>
+          </div>
+        </div>
+        <h2 id="fin-h" style="margin-top:1.4em">Kokonaisarvio</h2>
+        <div class="card verdict">
+          <div class="score" role="img" aria-label="Arvosana 4,7 / 5"><div class="score-inner"><b>4,7</b><span>/ 5</span></div></div>
+          <p style="margin:0;flex:1 1 260px">Kokonaisuutena pikakasino ilman rekisteröitymistä on vaivaton ja nopea: vahva tervetuliaisbonus, laaja pelivalikoima ja Pay N Play -kassa verkkopankilla. Kun huomioit bonusehdot ja pelaat vastuullisesti, se tarjoaa yhden sujuvimmista pelikokemuksista.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sec-alt" id="faq" aria-labelledby="faq-h">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">UKK</span>
+          <h2 id="faq-h">Usein kysytyt kysymykset pikakasinoista</h2>
+        </div>
+        <div class="faq">
+          <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" aria-expanded="false" aria-controls="faq-a0" id="faq-q0"><span>Mikä on pikakasino?</span><svg class="chev" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3><div class="faq-a" id="faq-a0" role="region" aria-labelledby="faq-q0" hidden><p>Pikakasino on nettikasino, jolla voit pelata ilman erillistä rekisteröitymistä. Kirjaudut ja teet talletuksen suoraan verkkopankkitunnuksilla (Pay N Play), joten pelitili syntyy automaattisesti ja voit aloittaa pelaamisen muutamassa minuutissa.</p></div></div>
+          <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" aria-expanded="false" aria-controls="faq-a1" id="faq-q1"><span>Miten kasino ilman rekisteröitymistä toimii?</span><svg class="chev" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3><div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden><p>Tunnistautuminen ja maksut hoituvat verkkopankilla palveluntarjoajien kuten Trustlyn tai Zimplerin kautta. Koska pankki vahvistaa henkilöllisyytesi, erillistä lomakerekisteröintiä tai käyttäjätunnusta ei tarvita ja kotiutukset ovat yleensä nopeita.</p></div></div>
+          <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" aria-expanded="false" aria-controls="faq-a2" id="faq-q2"><span>Kuinka nopeita kotiutukset pikakasinolla ovat?</span><svg class="chev" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3><div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden><p>Pay N Play -pikakasinoilla kotiutukset käsitellään usein minuuteissa ja raha näkyy tililläsi tyypillisesti alle 15 minuutissa, koska tunnistautuminen on tehty jo talletuksen yhteydessä.</p></div></div>
+          <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" aria-expanded="false" aria-controls="faq-a3" id="faq-q3"><span>Saako pikakasinolta bonuksia?</span><svg class="chev" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3><div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden><p>Kyllä. Monet pikakasinot tarjoavat tervetuliaisbonuksen, ilmaiskierroksia tai käteispalautusta. Lue aina bonusehdot ja kierrätysvaatimukset ennen tarjouksen lunastamista.</p></div></div>
+          <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" aria-expanded="false" aria-controls="faq-a4" id="faq-q4"><span>Onko pikakasinolla pelaaminen turvallista ja laillista Suomessa?</span><svg class="chev" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3><div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden><p>Suomessa ei ole vielä omaa pelilisenssiä, ja monopoli puretaan: lisensointi alkaa asteittain ja markkina avautuu vuonna 2027. Ulkomaisen lisenssin (esimerkiksi MGA) kasinolla pelaaminen on suomalaiselle sallittua. Valitse aina kasino, jolla on voimassa oleva lisenssi, SSL-suojaus ja vastuullisen pelaamisen työkalut.</p></div></div>
+          <div class="faq-item"><h3 class="faq-q"><button type="button" class="faq-btn" aria-expanded="false" aria-controls="faq-a5" id="faq-q5"><span>Voinko pelata pikakasinolla mobiililla?</span><svg class="chev" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3><div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden><p>Kyllä. Pikakasinot toimivat suoraan puhelimen tai tabletin selaimessa ilman sovelluksen lataamista, ja sekä pelit että kassa ovat käytettävissä myös liikkeellä.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="ftr">
+    <div class="wrap">
+      <div class="ftr-grid">
+        <div>
+          <button type="button" class="logo" onclick="__go()" aria-label="Pikakasino"><img src="/assets/logo-white.png" width="150" height="51" alt="Pikakasino" loading="lazy"></button>
+          <p style="margin-top:14px;max-width:40ch">Pikakasino ilman rekisteröitymistä – kolikkopelit, live-kasino ja nopeat kotiutukset verkkopankilla.</p>
+          <div class="rg"><span class="tag18">18+</span> <span>Pelaa vastuullisesti</span></div>
+        </div>
+        <div>
+          <h3>Pelinvalmistajat</h3>
+          <div class="fchips">
+            <button type="button" class="fchip" onclick="__go()">Pragmatic Play</button>
+            <button type="button" class="fchip" onclick="__go()">Evolution</button>
+            <button type="button" class="fchip" onclick="__go()">NetEnt</button>
+            <button type="button" class="fchip" onclick="__go()">Hacksaw</button>
+            <button type="button" class="fchip" onclick="__go()">Nolimit City</button>
+          </div>
+          <h3 style="margin-top:18px">Maksutavat</h3>
+          <div class="fchips">
+            <button type="button" class="fchip" onclick="__go()">Trustly</button>
+            <button type="button" class="fchip" onclick="__go()">Zimpler</button>
+            <button type="button" class="fchip" onclick="__go()">Visa</button>
+            <button type="button" class="fchip" onclick="__go()">Mastercard</button>
+          </div>
+        </div>
+        <div>
+          <h3>Linkit</h3>
+          <button type="button" class="fl" onclick="__scroll('paynplay')">Ilman rekisteröitymistä</button>
+          <button type="button" class="fl" onclick="__scroll('games')">Pelit</button>
+          <button type="button" class="fl" onclick="__scroll('bonus')">Bonukset</button>
+          <button type="button" class="fl" onclick="__scroll('license')">Lisenssi &amp; turvallisuus</button>
+          <button type="button" class="fl" onclick="__scroll('faq')">UKK</button>
+          <h3 style="margin-top:18px">Vastuullinen pelaaminen</h3>
+          <a class="fl" href="https://peluuri.fi/" rel="noopener nofollow" target="_blank">Peluuri</a>
+          <a class="fl" href="https://peliklinikka.fi/" rel="noopener nofollow" target="_blank">Peliklinikka – Peli poikki</a>
+        </div>
+      </div>
+      <p class="disclaimer">Rahapelaamiseen liittyy riippuvuuden riski ja se on sallittu vain täysi-ikäisille 18+. Pelaa vastuullisesti ja omien rajojesi puitteissa. Tämä on informatiivinen ja mainossisältöä sisältävä sivusto – tarkista aina sovellettava lainsäädäntö ja lisenssi ennen pelaamista. © 2026 Pikakasino. Kaikki oikeudet pidätetään.</p>
+    </div>
+  </footer>
+
+  <div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Evästeet">
+    <p>Käytämme evästeitä sivuston toiminnan ja käyttökokemuksen parantamiseen.</p>
+    <button type="button" class="btn btn-ghost" id="cookieDecline">Hylkää</button>
+    <button type="button" class="btn btn-cta" id="cookieAccept">Hyväksy</button>
+  </div>
+
+  <button type="button" class="totop" id="toTop" aria-label="Takaisin ylös" data-show="0"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+  <script>
+(function(){
+  'use strict';
+  var $=function(s,c){return (c||document).querySelector(s)};
+  var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+  window.__scroll=function(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});setDrawer(false);};
+
+  // build game grid (posters g01..g24; some flagged featured/new)
+  var grid=$('#gameGrid');
+  if(grid){
+    var feat={1:1,2:1,3:1,5:1,7:1,9:1,11:1,13:1,15:1,17:1,19:1,21:1};
+    var isnew={4:1,8:1,12:1,16:1,20:1,24:1};
+    var html='';
+    for(var i=1;i<=24;i++){
+      var n=('0'+i).slice(-2);
+      var badge = isnew[i] ? '<span class="badge b-new">Uusi</span>' : (feat[i]&&i<=3 ? '<span class="badge b-hot">Suosittu</span>' : '');
+      html+='<button type="button" class="tile" onclick="__go()" data-feat="'+(feat[i]?1:0)+'" data-new="'+(isnew[i]?1:0)+'">'
+          +'<span class="tile-media"><img src="/assets/img/games/g'+n+'.webp" width="360" height="480" loading="lazy" decoding="async" alt="Kolikkopeli pikakasinolla">'
+          +badge
+          +'<span class="tile-play" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></span></button>';
+    }
+    grid.innerHTML=html;
+  }
+
+  var tiles=$$('.tile'), buttons=$$('.catbtn');
+  var current='feat';
+  function apply(){
+    tiles.forEach(function(t){
+      var vis = current==='all' ? true
+              : current==='new' ? t.getAttribute('data-new')==='1'
+              : t.getAttribute('data-feat')==='1';
+      t.classList.toggle('hide',!vis);
+    });
+  }
+  buttons.forEach(function(b){b.addEventListener('click',function(){
+    current=b.getAttribute('data-filter');
+    buttons.forEach(function(x){x.classList.remove('is-active');x.setAttribute('aria-pressed','false')});
+    b.classList.add('is-active');b.setAttribute('aria-pressed','true');
+    apply();
+  })});
+  apply();
+
+  var drawer=$('#drawer'), scrim=$('#scrim');
+  function setDrawer(open){
+    if(!drawer)return;
+    drawer.setAttribute('aria-hidden',open?'false':'true');
+    scrim.setAttribute('data-show',open?'1':'0');
+    document.body.style.overflow=open?'hidden':'';
+    var t=$('#menuToggle'); if(t)t.setAttribute('aria-expanded',open?'true':'false');
+  }
+  window.__setDrawer=setDrawer;
+  var mt=$('#menuToggle'); if(mt)mt.addEventListener('click',function(){setDrawer(drawer.getAttribute('aria-hidden')!=='false')});
+  var dc=$('#drawerClose'); if(dc)dc.addEventListener('click',function(){setDrawer(false)});
+  if(scrim)scrim.addEventListener('click',function(){setDrawer(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setDrawer(false)});
+
+  $$('.faq-btn').forEach(function(btn){btn.addEventListener('click',function(){
+    var exp=btn.getAttribute('aria-expanded')==='true';
+    btn.setAttribute('aria-expanded',String(!exp));
+    var p=document.getElementById(btn.getAttribute('aria-controls')); if(p)p.hidden=exp;
+  })});
+
+  var cookie=$('#cookie');
+  try{if(localStorage.getItem('pk_cookie'))cookie.hidden=true;}catch(e){}
+  function cc(v){try{localStorage.setItem('pk_cookie',v)}catch(e){}cookie.hidden=true;}
+  var ca=$('#cookieAccept'),cd=$('#cookieDecline');
+  if(ca)ca.addEventListener('click',function(){cc('accepted')});
+  if(cd)cd.addEventListener('click',function(){cc('declined')});
+
+  var top=$('#toTop');
+  function os(){if(top)top.setAttribute('data-show',window.scrollY>600?'1':'0')}
+  window.addEventListener('scroll',os,{passive:true});os();
+  if(top)top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+  </script>
+</body>
+</html>
