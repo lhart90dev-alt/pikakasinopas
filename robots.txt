@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /go
 
-Sitemap: https://pikakasinopas.fi/sitemap.xml
+Sitemap: https://pikakasinopas.com/sitemap.xml
