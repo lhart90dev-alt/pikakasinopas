@@ -238,7 +238,7 @@ button{font:inherit;color:inherit}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}.js .reveal{opacity:1;transform:none}}
   
-.nav-links a{display:inline-flex;align-items:center;background:none;border:0;cursor:pointer;padding:10px 15px;border-radius:10px;font-weight:600;font-size:.98rem;color:var(--ink-2);text-decoration:none;transition:color .14s,background-color .14s}
+.nav-links a{display:inline-flex;align-items:center;background:none;border:0;cursor:pointer;padding:10px 13px;border-radius:10px;font-weight:600;font-size:.95rem;color:var(--ink-2);text-decoration:none;transition:color .14s,background-color .14s;white-space:nowrap}
 .nav-links a:hover{color:var(--ink);background:var(--bg-2)}
 a.brand{text-decoration:none}
 .drawer a.dl{display:block;text-align:left;text-decoration:none;color:var(--ink);padding:13px 12px;border-radius:12px;font-weight:600}
@@ -247,15 +247,12 @@ a.brand{text-decoration:none}
 .artwrap{background:linear-gradient(180deg,#eef7f6,#fff 40%)}
 .article{max-width:860px;margin-inline:auto;padding-inline:clamp(18px,4.5vw,40px);padding-block:clamp(30px,4vw,52px)}
 .crumb{font-size:.9rem;margin-bottom:22px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.crumb a{color:var(--teal-d);text-decoration:none}
-.crumb a:hover{text-decoration:underline}
-.crumb span{color:#9aa8bd}
+.crumb a{color:var(--teal-d);text-decoration:none}.crumb a:hover{text-decoration:underline}.crumb span{color:#9aa8bd}
 .arthead{margin-bottom:26px}
 .arthead h1{font-size:clamp(2rem,5.2vw,3.1rem);line-height:1.07;margin-bottom:.45em;overflow-wrap:break-word}
 .arthead .lead{margin-bottom:.8em}
 .artmeta{font-size:.88rem;color:var(--ink-2);font-weight:600}
-.prose>*{margin-bottom:1.15em}
-.prose>*:last-child{margin-bottom:0}
+.prose>*{margin-bottom:1.15em}.prose>*:last-child{margin-bottom:0}
 .prose h2{font-size:clamp(1.5rem,3.4vw,2.05rem);margin-top:1.7em;margin-bottom:.5em}
 .prose h3{font-size:1.2rem;margin-top:1.3em;margin-bottom:.35em}
 .prose p,.prose li{color:var(--ink-2);line-height:1.72}
@@ -263,8 +260,7 @@ a.brand{text-decoration:none}
 .prose a{color:var(--link);text-decoration:underline;text-underline-offset:2px}
 .prose ul,.prose ol{padding-left:1.25em;display:grid;gap:.5em;margin:0}
 .factbox{background:var(--bg-2);border:1px solid var(--line);border-left:4px solid var(--mint-1);border-radius:12px;padding:20px 22px}
-.factbox h3{margin:0 0 .4em;font-size:1.05rem}
-.factbox p,.factbox ul{color:var(--ink-2);margin:0}
+.factbox h3{margin:0 0 .4em;font-size:1.05rem}.factbox p,.factbox ul{color:var(--ink-2);margin:0}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
 table.gt{width:100%;border-collapse:collapse;font-size:.98rem;min-width:460px}
 table.gt th,table.gt td{padding:12px 15px;text-align:left;border-bottom:1px solid var(--line)}
@@ -272,7 +268,7 @@ table.gt th{background:var(--bg-2);color:var(--ink);font-weight:700}
 table.gt tbody tr:last-child td{border-bottom:0}
 .ctablock{background:var(--navy);border-radius:var(--r);padding:clamp(26px,4vw,36px);text-align:center;margin-block:2em}
 .ctablock h3{color:#fff;font-size:clamp(1.25rem,3vw,1.55rem);margin-bottom:.5em}
-.ctablock p{color:#9db0cd;margin-bottom:1.3em;max-width:44ch;margin-inline:auto}
+.ctablock p{color:#9db0cd;margin-bottom:1.3em;max-width:46ch;margin-inline:auto}
 .disc-inline{font-size:.86rem;color:#4c5b71;background:#fff;border:1px dashed var(--line-2);border-radius:12px;padding:14px 16px;line-height:1.55}
 .related{display:grid;gap:12px;margin-top:.4em}
 .related a{display:block;border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-decoration:none;color:var(--ink);font-weight:700;transition:border-color .14s,transform .14s}
@@ -291,11 +287,10 @@ table.gt tbody tr:last-child td{border-bottom:0}
     <div class="wrap nav-in">
       <a class="brand" href="/fi/" aria-label="Pikakasino — etusivu"><img src="/assets/logo.png" width="150" height="51" alt="Pikakasino"></a>
       <nav class="nav-links" aria-label="Päävalikko">
-        <a href="/fi/#miten">Näin se toimii</a>
-        <a href="/fi/#bonus">Bonus</a>
-        <a href="/fi/#turva">Turvallisuus</a>
+        <a href="/fi/">Etusivu</a>
+        <a href="/fi/miten-pikakasino-toimii/">Miten se toimii</a>
+        <a href="/fi/nopeat-kotiutukset/">Nopeat kotiutukset</a>
         <a href="/fi/rahapelilaki-2027/">Rahapelilaki 2027</a>
-        <a href="/fi/verovapaat-kasinot/">Verovapaat kasinot</a>
       </nav>
       <div class="nav-cta">
         <button type="button" class="btn btn-ghost" onclick="__go()">Kirjaudu</button>
@@ -309,8 +304,9 @@ table.gt tbody tr:last-child td{border-bottom:0}
   <nav class="drawer" id="drawer" aria-hidden="true" aria-label="Valikko">
     <button type="button" class="dclose" id="dclose" aria-label="Sulje valikko"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <a class="dl" href="/fi/">Etusivu</a>
-    <a class="dl" href="/fi/#miten">Näin se toimii</a>
-    <a class="dl" href="/fi/#bonus">Bonus</a>
+    <a class="dl" href="/fi/miten-pikakasino-toimii/">Miten se toimii</a>
+    <a class="dl" href="/fi/nopeat-kotiutukset/">Nopeat kotiutukset</a>
+    <a class="dl" href="/fi/trustly-kasinot/">Trustly-kasinot</a>
     <a class="dl" href="/fi/rahapelilaki-2027/">Rahapelilaki 2027</a>
     <a class="dl" href="/fi/verovapaat-kasinot/">Verovapaat kasinot</a>
     <button type="button" class="btn btn-pri" onclick="__go()">Pelaa nyt</button>
@@ -351,13 +347,7 @@ table.gt tbody tr:last-child td{border-bottom:0}
         <p>Nykyisin ETA-alueella lisensoidun kasinon voitot ovat suomalaiselle pelaajalle verovapaita. Kun kotimainen lisenssi tulee voimaan, lisensoitujen kasinoiden voittojen odotetaan pysyvän pelaajalle verovapaina, koska vero peritään operaattorilta. Lue tarkemmin: <a href="/fi/verovapaat-kasinot/">Ovatko kasinovoitot verovapaita?</a></p>
 
         <h2>Miten valita kasino nyt, ennen vuotta 2027?</h2>
-        <p>Siihen asti kun kotimainen lisenssi on käytössä, suomalainen voi pelata laillisesti <strong>ulkomaisen ETA-lisenssin</strong> kasinoilla. Suosituin ja luotettavin on <strong>Maltan (MGA)</strong> lisenssi. Tarkista aina:</p>
-        <ul>
-          <li>Voimassa oleva lisenssi (esim. MGA)</li>
-          <li>SSL-suojaus ja tietoturva</li>
-          <li>Vastuullisen pelaamisen työkalut ja pelirajat</li>
-          <li>Nopeat kotiutukset ja verkkopankkimaksut</li>
-        </ul>
+        <p>Siihen asti kun kotimainen lisenssi on käytössä, suomalainen voi pelata laillisesti <strong>ulkomaisen ETA-lisenssin</strong> kasinoilla. Suosituin ja luotettavin on <strong>Maltan (MGA)</strong> lisenssi. Tarkista aina voimassa oleva lisenssi, SSL-suojaus, vastuullisen pelaamisen työkalut ja nopeat kotiutukset.</p>
 
         <div class="factbox">
           <h3>Tärkeimmät päivämäärät</h3>
@@ -377,7 +367,7 @@ table.gt tbody tr:last-child td{border-bottom:0}
         </div>
       </div>
 
-      <section class="reveal" aria-labelledby="ukk-h" style="margin-top:2.2em">
+      <section aria-labelledby="ukk-h" style="margin-top:2.2em">
         <h2 id="ukk-h" style="font-size:clamp(1.5rem,3.4vw,2.05rem);margin-bottom:.7em">Usein kysytyt kysymykset</h2>
         <div class="faq">
           <div class="fitem"><button type="button" class="fbtn" aria-expanded="false" aria-controls="q0"><span>Milloin nettikasinot ovat laillisia Suomessa?</span><svg class="chev" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="fans" id="q0" hidden><p>Lisenssihakemukset avautuivat 1.3.2026, ensimmäiset lisensoidut palvelut voivat alkaa vuonna 2027 ja markkina avautuu täysin 1.7.2027.</p></div></div>
@@ -392,8 +382,9 @@ table.gt tbody tr:last-child td{border-bottom:0}
       <section aria-labelledby="rel-h" style="margin-top:2.2em">
         <h2 id="rel-h" style="font-size:1.3rem;margin-bottom:.6em">Lue myös</h2>
         <div class="related">
-          <a href="/fi/verovapaat-kasinot/">Ovatko kasinovoitot verovapaita?<small>ETA-alueen kasinon voitot ovat suomalaiselle verovapaita – katso säännöt ja taulukko.</small></a>
-          <a href="/fi/">Parhaat pikakasinot ilman rekisteröitymistä<small>Pelaa verkkopankilla, kotiuta minuuteissa – katso etusivu.</small></a>
+          <a href="/fi/verovapaat-kasinot/">Verovapaat kasinot<small>Ovatko kasinovoitot verovapaita Suomessa? ETA-alueella (esim. Malta / MGA) lisensoidun kasin</small></a>
+          <a href="/fi/miten-pikakasino-toimii/">Miten se toimii<small>Miten pikakasino toimii ilman rekisteröitymistä? Pay N Play tarkoittaa, että kirjaudut ja ma</small></a>
+          <a href="/fi/">Parhaat pikakasinot ilman rekisteröitymistä<small>Pelaa verkkopankilla, kotiuta minuuteissa — katso etusivu.</small></a>
         </div>
       </section>
     </article>
@@ -408,14 +399,11 @@ table.gt tbody tr:last-child td{border-bottom:0}
           <span class="age"><b>18+</b> Pelaa vastuullisesti</span>
         </div>
         <div>
-          <h3>Sivut</h3>
-          <a class="fl" href="/fi/">Etusivu</a>
-          <a class="fl" href="/fi/#miten">Näin se toimii</a>
-          <a class="fl" href="/fi/#bonus">Bonus</a>
-          <a class="fl" href="/fi/#turva">Turvallisuus</a>
-        </div>
-        <div>
           <h3>Oppaat</h3>
+          <a class="fl" href="/fi/">Etusivu</a>
+          <a class="fl" href="/fi/miten-pikakasino-toimii/">Miten se toimii</a>
+          <a class="fl" href="/fi/nopeat-kotiutukset/">Nopeat kotiutukset</a>
+          <a class="fl" href="/fi/trustly-kasinot/">Trustly-kasinot</a>
           <a class="fl" href="/fi/rahapelilaki-2027/">Rahapelilaki 2027</a>
           <a class="fl" href="/fi/verovapaat-kasinot/">Verovapaat kasinot</a>
         </div>
@@ -424,6 +412,7 @@ table.gt tbody tr:last-child td{border-bottom:0}
           <a class="fl" href="https://peluuri.fi/" rel="noopener nofollow" target="_blank">Peluuri</a>
           <a class="fl" href="https://peliklinikka.fi/" rel="noopener nofollow" target="_blank">Peliklinikka, Peli poikki</a>
         </div>
+        <div></div>
       </div>
       <p class="disc">Rahapelaamiseen liittyy riippuvuuden riski ja se on sallittu vain täysi-ikäisille 18+. Pelaa vastuullisesti ja omien rajojesi puitteissa. Tämä on informatiivinen ja mainossisältöä sisältävä sivusto. Tarkista aina sovellettava lainsäädäntö ja lisenssi ennen pelaamista. © 2026 Pikakasino.</p>
     </div>
